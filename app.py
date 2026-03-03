@@ -1,12 +1,20 @@
+import sys
 from src.recommender_system.logger import logging
 from src.recommender_system.exception import RecommenderException
-import sys
+from src.recommender_system.components.data_ingestion import DataIngestion
+
 
 if __name__ == "__main__":
-    logging.info("The execution has started")
-
     try:
-        a = 1 / 0 
+        logging.info("Application started")
+
+        # Run data ingestion
+        data_ingestion = DataIngestion()
+        saved_files = data_ingestion.initiate_data_ingestion()
+
+        logging.info("Data Ingestion completed successfully")
+        print("Saved files:", saved_files)
+
     except Exception as e:
-        logging.info("Custom Exception")
-        raise RecommenderException(e , sys)
+        logging.error("Custom Exception occurred during ingestion")
+        raise RecommenderException(e, sys)
