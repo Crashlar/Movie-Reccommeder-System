@@ -42,7 +42,6 @@ def load_data():
 
     except Exception as ex:
         raise RecommenderException(ex, sys)
-5
 
 
 def save_object(file_path, obj):

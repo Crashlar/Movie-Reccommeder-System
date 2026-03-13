@@ -1,9 +1,30 @@
-pandas 
-numpy 
-seaborn 
-matplotlib
-# -e . 
-python-dotenv
-kagglehub
+certifi==2026.2.25
+charset-normalizer==3.4.4
+colorama==0.4.6
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.61.1
+idna==3.11
+kagglehub==1.0.0
+kagglesdk==0.1.16
+kiwisolver==1.4.9
+matplotlib==3.10.8
+movie-recommender-system==0.0.1
+numpy==2.4.2
+packaging==26.0
+pandas==3.0.1
+pillow==12.1.1
+protobuf==7.34.0
+pyparsing==3.3.2
+python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
+PyYAML==6.0.3
+requests==2.32.5
+seaborn==0.13.2
+setuptools==82.0.0
+six==1.17.0
+tqdm==4.67.3
+tzdata==2025.3
+urllib3==2.6.3
 
-
+-e . 
