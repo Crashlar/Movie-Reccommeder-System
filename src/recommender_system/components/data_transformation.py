@@ -29,7 +29,7 @@ class DataTransformation:
     
     def initiate_data_transformation(self, train_data_path):
         try:
-            logging.info("Starting final data transformation for recommendation system.")
+            logging.info("Starting  data transformation for recommendation system.")
             
             # 1. Load your pre-cleaned experiment output
             df = pd.read_csv(train_data_path)
@@ -45,15 +45,17 @@ class DataTransformation:
             
             # 4. Clean up the dataframe
             # We only need the ID, Title, and Tags for the actual recommendation engine
-            new_df = df[['id', 'title', 'tags']]
+            new_df = df[['id', 'title', 'tags', 'release_date', 'genres', 'runtime']]
             
-            # Convert list of tags to a single string
             new_df['tags'] = new_df['tags'].apply(lambda x: " ".join(x))
             new_df['tags'] = new_df['tags'].apply(lambda x: x.lower())
+
+            logging.info("Tags column and metadata preserved successfully.")
 
             # 5. Save the final processed DataFrame
             os.makedirs(os.path.dirname(self.data_transformation_config.transformed_data_path), exist_ok=True)
             new_df.to_csv(self.data_transformation_config.transformed_data_path, index=False)
+
             logging.info(f"Transformed dataframe saved to {self.data_transformation_config.transformed_data_path}")
 
             # 6. Initialize and Fit the Vectorizer
