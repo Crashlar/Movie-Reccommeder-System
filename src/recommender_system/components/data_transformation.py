@@ -45,7 +45,7 @@ class DataTransformation:
             
             # 4. Clean up the dataframe
             # We only need the ID, Title, and Tags for the actual recommendation engine
-            new_df = df[['id', 'title', 'tags', 'release_date', 'genres', 'runtime']]
+            new_df = df[['id', 'title', 'tags', 'release_date', 'genres', 'runtime' , "overview"]]
             
             new_df['tags'] = new_df['tags'].apply(lambda x: " ".join(x))
             new_df['tags'] = new_df['tags'].apply(lambda x: x.lower())

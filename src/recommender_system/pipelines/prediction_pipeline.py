@@ -40,7 +40,8 @@ class PredictionPipeline:
                     "id": temp_df['id'],
                     "year": temp_df['release_date'], 
                     "genres": temp_df['genres'],
-                    "runtime": temp_df['runtime']
+                    "runtime": temp_df['runtime'],
+                    "overview" : temp_df['overview']
                 })
                 
             return recommendations    
